@@ -18,7 +18,7 @@ public class FileProcessorTest {
     public void testExampleProcess()
             throws CodeChallengeException {
 
-        String fileName = "src/test/resources/example.txt";
+        String fileName = "src/test/resources/championship.txt";
         List<Ranking> rankings = new FileProcessor(fileName, MainApplication.WIN_POINTS, MainApplication.DRAW_POINTS)
                 .process()
                 .rank();

@@ -39,9 +39,13 @@ public class MainApplication {
 
     public static void main(String[] args) {
 
+        if (args.length != 1) {
+            System.out.println("Usage: java -jar challenge.jar <file-name>");
+            return;
+        }
+
         try {
-            String fileName = "src/test/resources/example1.txt";
-            List<Ranking> rankings = new FileProcessor(fileName, WIN_POINTS, DRAW_POINTS)
+            List<Ranking> rankings = new FileProcessor(args[0], WIN_POINTS, DRAW_POINTS)
                     .process()
                     .rank();
             Printer.print(rankings);

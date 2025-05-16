@@ -3,4 +3,4 @@ A fun code challenge
 
 mvn clean install
 
-java -jar target/challenge.jar
+java -jar target/challenge.jar championship.txt
