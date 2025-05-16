@@ -15,10 +15,10 @@ public class UtilsTest {
 
         GameResult result = Utils.processLine("Lions 3, Snakes 3");
 
-        assertEquals("Lions", result.homeTeamResult().getTeam());
-        assertEquals(3, result.homeTeamResult().getGoals());
-        assertEquals("Snakes", result.awayTeamResult().getTeam());
-        assertEquals(3, result.awayTeamResult().getGoals());
+        assertEquals("Lions", result.homeTeamResult().team());
+        assertEquals(3, result.homeTeamResult().goals());
+        assertEquals("Snakes", result.awayTeamResult().team());
+        assertEquals(3, result.awayTeamResult().goals());
 
         assertThrows(CodeChallengeException.class, () -> Utils.processLine("Lions 3 Snakes 3"));
         assertThrows(CodeChallengeException.class, () -> Utils.processLine("Lions, 3, Snakes, 3"));
@@ -31,8 +31,8 @@ public class UtilsTest {
 
         TeamResult result = Utils.processToken("Lions 3");
 
-        assertEquals("Lions", result.getTeam());
-        assertEquals(3, result.getGoals());
+        assertEquals("Lions", result.team());
+        assertEquals(3, result.goals());
 
         assertThrows(CodeChallengeException.class, () -> Utils.processLine("Lions3"));
         assertThrows(CodeChallengeException.class, () -> Utils.processLine("3"));

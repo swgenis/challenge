@@ -37,18 +37,18 @@ public abstract class AbstractProcessor implements Processor {
     public void process(GameResult gameResult) {
 
         // Check if teams exist or not and add default value to map.
-        rankings.putIfAbsent(gameResult.homeTeamResult().getTeam(), 0);
-        rankings.putIfAbsent(gameResult.awayTeamResult().getTeam(), 0);
+        rankings.putIfAbsent(gameResult.homeTeamResult().team(), 0);
+        rankings.putIfAbsent(gameResult.awayTeamResult().team(), 0);
 
         // Add points to existing map value for the winning team.
-        if (gameResult.homeTeamResult().getGoals() > gameResult.awayTeamResult().getGoals()) {
-            rankings.merge(gameResult.homeTeamResult().getTeam(), winningPoints, Integer::sum);
-        } else if (gameResult.homeTeamResult().getGoals() < gameResult.awayTeamResult().getGoals()) {
-            rankings.merge(gameResult.awayTeamResult().getTeam(), winningPoints, Integer::sum);
+        if (gameResult.homeTeamResult().goals() > gameResult.awayTeamResult().goals()) {
+            rankings.merge(gameResult.homeTeamResult().team(), winningPoints, Integer::sum);
+        } else if (gameResult.homeTeamResult().goals() < gameResult.awayTeamResult().goals()) {
+            rankings.merge(gameResult.awayTeamResult().team(), winningPoints, Integer::sum);
         } else {
             // On draw, both teams get points.
-            rankings.merge(gameResult.homeTeamResult().getTeam(), drawPoints, Integer::sum);
-            rankings.merge(gameResult.awayTeamResult().getTeam(), drawPoints, Integer::sum);
+            rankings.merge(gameResult.homeTeamResult().team(), drawPoints, Integer::sum);
+            rankings.merge(gameResult.awayTeamResult().team(), drawPoints, Integer::sum);
         }
     }
 

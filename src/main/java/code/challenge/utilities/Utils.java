@@ -26,10 +26,10 @@ public class Utils {
 
             TeamResult homeTeamResult = processToken(tokens[0]);
             TeamResult awayTeamResult = processToken(tokens[1]);
-            if (homeTeamResult.getGoals() < 0 || awayTeamResult.getGoals() < 0) {
+            if (homeTeamResult.goals() < 0 || awayTeamResult.goals() < 0) {
                 throw new CodeChallengeException("Invalid number format: negative goals.");
             }
-            if (homeTeamResult.getTeam().equals(awayTeamResult.getTeam())) {
+            if (homeTeamResult.team().equals(awayTeamResult.team())) {
                 throw new CodeChallengeException("Teams cannot be the same.");
             }
 

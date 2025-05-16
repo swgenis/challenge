@@ -18,7 +18,7 @@ public class FileProcessorTest {
     public void testExampleProcess()
             throws CodeChallengeException {
 
-        String fileName = "src/test/resources/championship.txt";
+        String fileName = "src/test/resources/example.txt";
         List<Ranking> rankings = new FileProcessor(fileName, MainApplication.WIN_POINTS, MainApplication.DRAW_POINTS)
                 .process()
                 .rank();
@@ -32,7 +32,7 @@ public class FileProcessorTest {
     }
 
     @Test
-    public void testInvalidFiles() {
+    public void goals() {
 
         assertEquals("File name is not available.",
             assertThrows(CodeChallengeException.class,
