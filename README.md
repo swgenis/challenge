@@ -1,5 +1,5 @@
 # challenge
-A fun code challenge.
+A fun code challenge. Probably a bit 'over-engineered' for the requirement, but hey, time flies when you're having fun.
 
 ## Description
 A production ready, maintainable, testable command-line application that
