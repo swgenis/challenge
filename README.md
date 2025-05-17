@@ -10,18 +10,32 @@ will calculate the ranking table for a league.
 - Maven 3.9.9
 
 ## Building the Application
+
 To build the application, run:
+
+```sh
 mvn clean install
+```
 
 ## Running the Application
-Execute the following command:
 
-java -jar target/challenge.jar championship.txt
+Navigate to the target folder and execute the following command:
+
+```sh
+java -jar challenge.jar ..\championship.txt
+```
+
 where `championship.txt` is the input file.
 
+alternative use the following line to execute the provided example.
+
+```sh
+java -jar challenge.jar ..\src\test\resources\example.txt
+```
+
 ## Input File Format
-Lions 3, Snakes 3
-Tarantulas 1, FC Awesome 0
-Lions 1, FC Awesome 1
-Tarantulas 3, Snakes 1
-Lions 4, Grouches 0
+Lions 3, Snakes 3<br>
+Tarantulas 1, FC Awesome 0<br>
+Lions 1, FC Awesome 1<br>
+Tarantulas 3, Snakes 1<br>
+Lions 4, Grouches 0<br>
