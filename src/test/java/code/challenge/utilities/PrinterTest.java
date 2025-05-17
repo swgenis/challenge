@@ -1,6 +1,6 @@
 package code.challenge.utilities;
 
-import code.challenge.entities.Ranking;
+import code.challenge.dto.Ranking;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

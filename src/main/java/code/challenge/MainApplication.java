@@ -1,6 +1,6 @@
 package code.challenge;
 
-import code.challenge.entities.Ranking;
+import code.challenge.dto.Ranking;
 import code.challenge.exception.CodeChallengeException;
 import code.challenge.utilities.Printer;
 import code.challenge.processor.FileProcessor;

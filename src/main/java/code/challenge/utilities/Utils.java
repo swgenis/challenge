@@ -1,7 +1,7 @@
 package code.challenge.utilities;
 
-import code.challenge.entities.GameResult;
-import code.challenge.entities.TeamResult;
+import code.challenge.dto.GameResult;
+import code.challenge.dto.TeamResult;
 import code.challenge.exception.CodeChallengeException;
 
 import java.util.regex.PatternSyntaxException;

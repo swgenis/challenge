@@ -1,7 +1,7 @@
 package code.challenge.processor;
 
 import code.challenge.api.Processor;
-import code.challenge.entities.GameResult;
+import code.challenge.dto.GameResult;
 import code.challenge.exception.CodeChallengeException;
 import code.challenge.utilities.Utils;
 

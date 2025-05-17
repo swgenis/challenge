@@ -1,6 +1,6 @@
 package code.challenge.api;
 
-import code.challenge.entities.Ranking;
+import code.challenge.dto.Ranking;
 import code.challenge.exception.CodeChallengeException;
 
 import java.util.List;

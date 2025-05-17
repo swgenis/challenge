@@ -1,8 +1,8 @@
 package code.challenge.processor;
 
 import code.challenge.api.Processor;
-import code.challenge.entities.GameResult;
-import code.challenge.entities.Ranking;
+import code.challenge.dto.GameResult;
+import code.challenge.dto.Ranking;
 
 import java.util.HashMap;
 import java.util.List;

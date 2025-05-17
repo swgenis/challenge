@@ -1,4 +1,4 @@
-package code.challenge.entities;
+package code.challenge.dto;
 
 /**
  * Represents a game result.

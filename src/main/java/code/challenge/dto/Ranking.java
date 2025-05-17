@@ -1,4 +1,4 @@
-package code.challenge.entities;
+package code.challenge.dto;
 
 /**
  * Represents the ranking of a team on the league log.

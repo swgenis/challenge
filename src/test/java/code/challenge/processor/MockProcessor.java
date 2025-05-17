@@ -2,7 +2,7 @@ package code.challenge.processor;
 
 import code.challenge.MainApplication;
 import code.challenge.api.Processor;
-import code.challenge.entities.GameResult;
+import code.challenge.dto.GameResult;
 
 import java.util.List;
 

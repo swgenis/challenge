@@ -1,9 +1,9 @@
 package code.challenge.processor;
 
 import code.challenge.MainApplication;
-import code.challenge.entities.GameResult;
-import code.challenge.entities.Ranking;
-import code.challenge.entities.TeamResult;
+import code.challenge.dto.GameResult;
+import code.challenge.dto.Ranking;
+import code.challenge.dto.TeamResult;
 import code.challenge.exception.CodeChallengeException;
 import org.junit.jupiter.api.Test;
 
