@@ -28,16 +28,22 @@ public class FileProcessor extends AbstractProcessor {
     public Processor process()
             throws CodeChallengeException {
 
+        if (status != Status.INITIALIZED) {
+            throw new IllegalStateException("Processor is not yet ready to rank.");
+        }
         if (fileName == null) {
             throw new CodeChallengeException("File name is not available.");
         }
 
         try {
+
+            // Read the file.
             Scanner fileScanner = new Scanner(new File(fileName));
             if (!fileScanner.hasNextLine()) {
                 throw new CodeChallengeException("File is empty.");
             }
 
+            // Process each line in the file.
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine();
                 GameResult result = Utils.processLine(line);
@@ -48,6 +54,8 @@ public class FileProcessor extends AbstractProcessor {
         } catch (FileNotFoundException fnfe) {
             throw new CodeChallengeException("File not found: " + fnfe.getMessage());
         }
+
+        this.status = Status.PROCESSED;
         return this;
     }
 

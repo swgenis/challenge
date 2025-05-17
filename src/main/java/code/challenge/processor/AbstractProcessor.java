@@ -20,6 +20,13 @@ import java.util.stream.Collectors;
  */
 public abstract class AbstractProcessor implements Processor {
 
+    public enum Status {
+        INITIALIZED,
+        PROCESSED
+    }
+
+    protected Status status;
+
     // Making the processor more configurable just for fun.
     private final int winningPoints;
     private final int drawPoints;
@@ -32,6 +39,7 @@ public abstract class AbstractProcessor implements Processor {
     public AbstractProcessor(int winningPoints, int drawPoints) {
         this.winningPoints = winningPoints;
         this.drawPoints = drawPoints;
+        this.status = Status.INITIALIZED;
     }
 
     public void process(GameResult gameResult) {
@@ -54,6 +62,10 @@ public abstract class AbstractProcessor implements Processor {
 
     @Override
     public List<Ranking> rank() {
+
+        if (status != Status.PROCESSED) {
+            throw new IllegalStateException("Processor is not yet ready to rank.");
+        }
         return rankings.entrySet().stream()
                 .map(e -> new Ranking(e.getKey(), e.getValue())).collect(Collectors.toList());
     }

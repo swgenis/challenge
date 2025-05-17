@@ -6,6 +6,9 @@ import code.challenge.entities.GameResult;
 
 import java.util.List;
 
+/**
+ * This is a mock implementation of the Processor interface for testing purposes.
+ */
 public class MockProcessor extends AbstractProcessor {
 
     private final List<GameResult> results;
@@ -18,6 +21,8 @@ public class MockProcessor extends AbstractProcessor {
     public Processor process() {
         // Process each game result.
         this.results.forEach(this::process);
+
+        this.status = Status.PROCESSED;
         return this;
     }
 }
