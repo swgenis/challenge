@@ -22,16 +22,18 @@ mvn clean install
 Navigate to the target folder and execute the following command:
 
 ```sh
-java -jar challenge.jar ..\championship.txt
+java -jar challenge.jar
 ```
 
-where `championship.txt` is the input file.
+## Using the Application
 
-alternative use the following line to execute the provided example.
+type `..\championship.txt` and hit enter.
 
-```sh
-java -jar challenge.jar ..\src\test\resources\example.txt
-```
+alternative the example input file is located at:
+
+`..\src\test\resources\example.txt`
+
+type 'exit' to close the program.
 
 ## Input File Format
 Lions 3, Snakes 3<br>

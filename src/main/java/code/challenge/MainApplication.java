@@ -6,6 +6,7 @@ import code.challenge.utilities.Printer;
 import code.challenge.processor.FileProcessor;
 
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * The MainApplication serves as the entry point for the application which processes game results,
@@ -39,13 +40,26 @@ public class MainApplication {
 
     public static void main(String[] args) {
 
-        if (args.length != 1) {
-            System.out.println("Usage: java -jar challenge.jar <file-name>");
-            return;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter your input file (type 'exit' to quit):");
+
+        while (true) {
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("exit")) {
+                System.out.println("Exiting challenge.");
+                break;
+            }
+            processInput(input);
         }
+        scanner.close();
+    }
+
+    private static void processInput(String input) {
 
         try {
-            List<Ranking> rankings = new FileProcessor(args[0], WIN_POINTS, DRAW_POINTS)
+            List<Ranking> rankings = new FileProcessor(input, WIN_POINTS, DRAW_POINTS)
                     .process()
                     .rank();
             Printer.print(rankings);
